@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terminal Application</title>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      #terminal {
+        min-width: 1000px;
+        min-height: 200px;
+        background: black;
+        color: white;
+        font-family: "Inconsolata", monospace;
+        font-size: 32px;
+      }
+      #terminal:focus-within,
+      #terminal:focus {
+        border: 2px solid red;
+      }
+
+      .char {
+      }
+      .char.active {
+        width: 1ch;
+        background-color: white;
+        animation: 0.05s caret-animation;
+      }
+
+      @keyframes caret-animation {
+        0% {
+          background-color: transparent;
+        }
+        100% {
+          background-color: white;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div tabindex="0" id="terminal"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
